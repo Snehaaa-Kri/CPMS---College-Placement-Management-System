@@ -41,6 +41,7 @@ function LoginTPO() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+
     if (!formData?.email && !formData?.password) return setError({ email: 'Email Required!', password: 'Password Required!' })
     if (!formData?.email) return setError({ email: 'Email Required!' })
     if (!formData?.password) return setError({ password: 'Password Required!' })
@@ -48,7 +49,9 @@ function LoginTPO() {
     setLoading(true);
 
     try {
+      console.log("Above call....")
       const response = await axios.post(`${BASE_URL}/tpo/login`, formData);
+      console.log("RESponse: ", response);
       localStorage.setItem('token', response.data.token);
       navigate('/tpo/dashboard');
     } catch (error) {

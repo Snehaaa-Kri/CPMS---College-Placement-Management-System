@@ -8,10 +8,11 @@ function ViewNotice() {
   useEffect(() => {
     document.title = 'CPMS | Notice'; // This is now safe
     fetchNotice();
-  }, [noticeId]);
+  }, []);
   
   const navigate = useNavigate();
   const noticeId = useParams();
+  // console.log("notice id: ", noticeId);
   const [notice, setNotice] = useState({});
 
   const fetchNotice = async () => {
