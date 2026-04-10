@@ -18,10 +18,10 @@ const Sidebar = ({ isSidebarVisible }) => {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    if (loadData.role === 'student') navigate('../student/login');
-    else if (loadData.role === 'tpo_admin') navigate('../tpo/login');
-    else if (loadData.role === 'management_admin') navigate('../management/login');
-    else if (loadData.role === 'superuser') navigate('../admin');
+    if (loadData.role === 'student') navigate('/');
+    else if (loadData.role === 'tpo_admin') navigate('/');
+    else if (loadData.role === 'management_admin') navigate('/');
+    else if (loadData.role === 'superuser') navigate('/');
   };
 
   const [loadData, setLoadData] = useState({

@@ -8,7 +8,9 @@ import { Button } from 'react-bootstrap';
 const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
 function LoginManagement() {
-  document.title = 'CPMS | Management Login';
+  useEffect(() => {
+    document.title = 'CPMS | Management Login';
+  }, []);
 
   const navigate = useNavigate();
   const [isLoading, setLoading] = useState(false);

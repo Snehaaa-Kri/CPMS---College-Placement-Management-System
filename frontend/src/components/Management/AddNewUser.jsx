@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Form, FloatingLabel } from 'react-bootstrap';
 import { GrFormAdd } from 'react-icons/gr';
 import axios from 'axios';
@@ -8,7 +8,10 @@ const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 import { useLocation } from 'react-router-dom';
 
 function AddNewUser() {
-  document.title = 'CPMS | Add new user';
+  // document.title = 'CPMS | Add new user';
+  useEffect(() => {
+    document.title = 'CPMS | Add new user';
+  }, []);
 
   const location = useLocation();
   // filter management or tpo or student to add
